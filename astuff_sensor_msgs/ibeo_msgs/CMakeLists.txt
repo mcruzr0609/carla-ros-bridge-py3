@@ -62,7 +62,7 @@ if(${ROS_VERSION} EQUAL 1)
 
   foreach(MSG_FILE ${MSG_FILES})
     execute_process(
-      COMMAND /bin/bash -c "sed -i 's/builtin_interfaces\\/Time/time/g' /home/zx/carla-ros-bridge/astuff/catkin_ws/src/astuff_sensor_msgs/ibeo_msgs/msg/${MSG_FILE}"
+      COMMAND /bin/bash -c "sed -i 's/builtin_interfaces\\/Time/time/g' /root/catkin_ws/src/astuff_sensor_msgs/ibeo_msgs/msg/${MSG_FILE}"
       WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
   endforeach()
