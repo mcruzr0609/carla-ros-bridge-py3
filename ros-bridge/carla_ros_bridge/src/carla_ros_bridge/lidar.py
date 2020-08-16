@@ -78,7 +78,7 @@ class Lidar(Sensor):
 
         lidar_data = numpy.frombuffer(
             carla_lidar_measurement.raw_data, dtype=numpy.float32)
-        lidar_data = numpy.reshape((-1, 1, lidar_data, (int(lidar_data.shape[0] / 3), 3)))
+        lidar_data = numpy.reshape((lidar_data, (int(lidar_data.shape[0] / 3), 3)))
         # we take the oposite of y axis
         # (as lidar point are express in left handed coordinate system, and ros need right handed)
         # we need a copy here, because the data are read only in carla numpy
